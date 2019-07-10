@@ -22,7 +22,6 @@ class SuccessResponseManager:
         Returns:
             None
         """
-        resp.delete_header("server")
         resp.set_header("X-Powered-By", "JBoss/7.1.2")
         resp.set_header("X-Download-Options", "noopen")
         resp.set_header("X-Content-Type-Options", "nosniff")

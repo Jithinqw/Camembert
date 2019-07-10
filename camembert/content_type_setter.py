@@ -15,7 +15,7 @@ class ContentTypeManager:
             res (object): response object
         
         Raises:
-            falconHTTPBadRequest: request object does not have a application/json in req.content_type
+            HTTPBadRequest: request object does not have a application/json in req.content_type
         """
         if req.content_type is None or "application/json" not in req.content_type:
             raise falcon.HTTPBadRequest("Invalid Request")
