@@ -14,6 +14,9 @@ setup(
     author_email="zachariajithin@gmail.com",
     license="MIT",
     packages=["camembert"],
+    download_url="https://github.com/Jithinqw/Camembert/archive/0.0.1.tar.gz",
     install_packages=["falcon"],
+    install_requires=[
+          'falcon'],
     keywords= ["falcon", "middlewares"]
 )
