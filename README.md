@@ -20,6 +20,10 @@ Run dependencies using `python3 -m pip install -r requirements.txt --cert <proxy
 
 Then run `python3 setup.py install`
 
+Or you can install package using `pip install camembert`
+
+Go to [Pypi page](https://pypi.org/project/camembert/) for more details.
+
 ## Examples
 
 Please see `EXAMPLES.md` for examples.

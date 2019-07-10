@@ -7,7 +7,7 @@ if sys.version_info < (3, 0):
 
 setup(
     name= "camembert",
-    version= ".".join(__version__)
+    version= ".".join(__version__),
     description= "Falcon middlewares made easy.",
     url= "https://github.com/Jithinqw/Camembert",
     author="Jithin Zacharia",
