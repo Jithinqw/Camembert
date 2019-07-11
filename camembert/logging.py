@@ -2,11 +2,12 @@ import falcon
 import logging
 from os.path import join, dirname, realpath
 
+logger = logging.getLogger(__name__)
 logger.addHandler(logging.FileHandler("test.log"))
 logger.setLevel(logging.INFO)
 
 
-class ResponseLoggerMiddleware:
+class ResponseLoggerMiddleware(object):
     def process_response(self, req, resp):
         """process_response is a middleware for logging response.
         Args:

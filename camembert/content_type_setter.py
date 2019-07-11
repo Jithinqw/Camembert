@@ -1,7 +1,7 @@
 import falcon
 
 
-class ContentTypeManager:
+class ContentTypeManager(object):
     """Class for content type Manager"""
 
     def __init__(self):
@@ -18,4 +18,7 @@ class ContentTypeManager:
             HTTPBadRequest: request object does not have a application/json in req.content_type
         """
         if req.content_type is None or "application/json" not in req.content_type:
-            raise falcon.HTTPBadRequest("Invalid Request")
+            raise falcon.HTTPBadRequest(
+                title="Invalid Request",
+                description="All requests must have a application/json header"
+            )

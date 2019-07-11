@@ -1,8 +1,7 @@
 import falcon, json
-from exceptions.serverExceptions.decodingExceptions import UTF8Exception
 
 
-class JSONTranslatorManager:
+class JSONTranslatorManager(object):
     """JSONTranslatorManager for translating JSON"""
 
     def process_request(self, req, resp):
@@ -23,5 +22,6 @@ class JSONTranslatorManager:
                 req.data = json.loads(req.stream.read().decode("utf-8"))
             except:
                 raise falcon.HTTPBadRequest(
-                    "Bad request", "Invalid body. Unable to parse the given content"
+                    title="Bad request", 
+                    description="Invalid body. Unable to parse the given content"
                 )
