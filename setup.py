@@ -19,7 +19,7 @@ setup(
     packages=["camembert"],
     long_description=long_description,
     long_description_content_type="text/markdown",
-    download_url="https://github.com/Jithinqw/Camembert/archive/0.0.1.tar.gz",
+    download_url="https://github.com/Jithinqw/Camembert/archive/0.03.tar.gz",
     install_packages=["falcon"],
     install_requires=[
           "falcon"],
