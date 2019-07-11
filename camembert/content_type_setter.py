@@ -4,9 +4,6 @@ import falcon
 class ContentTypeManager(object):
     """Class for content type Manager"""
 
-    def __init__(self):
-        pass
-
     def process_request(self, req, resp):
         """process_request is a middleware for checking the application/json request.
         Args:
