@@ -8,7 +8,7 @@ logger.setLevel(logging.INFO)
 
 
 class ResponseLoggerMiddleware(object):
-    def process_response(self, req, resp):
+    def process_response(self, req, resp, resource, req_succeeded):
         """process_response is a middleware for logging response.
         Args:
             self (object): class instance
