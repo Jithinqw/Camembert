@@ -1,6 +1,6 @@
 import sys
 from setuptools import setup
-__version__ = list(map(str, [0, 0, 1]))
+__version__ = list(map(str, [0, 3, 0]))
 
 if sys.version_info < (3, 0):
     raise Exception("You require Python3.0 or above to run Camembert")
