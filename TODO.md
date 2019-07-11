@@ -1,0 +1,4 @@
+- [x] Write unit test.
+- [x] Write more Middlewares.
+- [x] Write hooks for falcon.
+- [x] Make existing middleware configurable.
