@@ -1,5 +1,7 @@
 # Camembert
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Jithinqw/Camembert.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Jithinqw/Camembert/alerts/)
+
 This library is for configuring and setting middlewares and hooks for Falcon framework.
 
 ## Requirements
