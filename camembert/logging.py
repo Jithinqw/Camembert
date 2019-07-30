@@ -1,6 +1,4 @@
-import falcon
 import logging
-from os.path import join, dirname, realpath
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.FileHandler("test.log"))
