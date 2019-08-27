@@ -10,11 +10,11 @@ Please refer to `requirements.txt` for list of requirements.
 
 ## List of middlewares
 
-- [x] Converting request to JSON middleware 
-- [x] Requests Logging middleware
-- [x] Response headers middleware
-- [x] Content Type middleware
-- [x] HTTPS required
+- Converting request to JSON middleware 
+- Requests Logging middleware
+- Response headers middleware
+- Content Type middleware
+- HTTPS required
 
 ## Installing
 
