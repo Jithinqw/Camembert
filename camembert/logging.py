@@ -5,8 +5,8 @@ from datetime import datetime
 
 
 def setup_logging(log):
-    file_path = sys.modules[__name__].__file__
-    project_path = os.path.dirname(os.path.dirname(file_path))
+    file_path = os.getcwd()
+    project_path = file_path
     log_location = project_path + "/logs/"
     if not os.path.exists(log_location):
         os.makedirs(log_location)
@@ -27,7 +27,7 @@ def setup_logging(log):
 class ServerLoggingManager:
 
     """
-        This module is responsible for maintaing 
+        This module is responsible for maintaing
         logs in a .log file. These are the currently
         implemented details for each log entry.
         1. IP
