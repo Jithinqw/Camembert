@@ -1,6 +1,3 @@
-import falcon
-
-
 class DBSesssionManager(object):
     """Middleware for manager for managing db sessions 
     for each request. 
@@ -17,18 +14,18 @@ class DBSesssionManager(object):
 
     def __init__(self, db_session):
         self.db_session = db_session
-    
+
     def process_request(self, req, resp, resource, params):
         try:
             resource.db_session = self.db_session()
         except:
             raise ConnectionError("Unable to create sessions with database")
-    
+
     def process_response(self, req, resp, resource, req_succeeded):
         try:
-            if hasattr(response, "session"):
+            if hasattr(resource, "session"):
                 if not req_succeeded:
                     resource.db_session.rollback()
-                db_session.remove()
+                resource.db_session.remove()
         except:
             raise EnvironmentError("Unable to remove sessions from request")

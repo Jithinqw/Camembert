@@ -1,6 +1,4 @@
-
 import re
-
 import falcon
 
 _FORWARDED_PROTO_RE = re.compile("proto=([A-Za-z]+)")

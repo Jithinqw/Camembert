@@ -1,5 +1,5 @@
-import falcon, json
-
+import falcon
+import json
 
 class JSONTranslatorManager(object):
     """JSONTranslatorManager for translating JSON"""
@@ -13,7 +13,8 @@ class JSONTranslatorManager(object):
         Returns:
             object: sets data as a req param
         Raises:
-            falconHTTPBadRequest: some thing happened in processing the request
+            falconHTTPBadRequest: 
+                some thing happened in processing the request
         """
         if req.method == "GET":
             pass
@@ -22,6 +23,6 @@ class JSONTranslatorManager(object):
                 req.data = json.loads(req.stream.read().decode("utf-8"))
             except:
                 raise falcon.HTTPBadRequest(
-                    title="Bad request", 
-                    description="Invalid body. Unable to parse the given content"
+                    title="Bad request",
+                    description="Invalid body. Unable to parse the given content",
                 )

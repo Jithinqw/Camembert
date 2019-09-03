@@ -1,8 +1,8 @@
 """Module for maintaing logs for server."""
-import falcon
-import sys, os, logging, uuid
+import os,
+import logging
+import uuid
 from datetime import datetime
-
 
 def setup_logging(log):
     file_path = os.getcwd()
