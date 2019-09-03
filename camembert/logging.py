@@ -25,7 +25,6 @@ def setup_logging(log):
 
 
 class ServerLoggingManager:
-
     """
         This module is responsible for maintaing
         logs in a .log file. These are the currently
