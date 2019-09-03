@@ -3,11 +3,13 @@ import datetime
 
 class SuccessResponseManager:
     """A manager middleware for changing the security
-        headers in success response"""
+       headers in success response.
+    """
 
     def process_response(self, req, resp, resource, req_succeeded):
-        """process_response, It can process successful response and 
-        set headers to every header and deletes any headers which are vernerable. 
+        """process_response - It can process successful responses and 
+        set headers to every header and deletes any headers 
+        which are vulnerable. 
         Please refer https://www.owasp.org for more details.
 
         Args:
