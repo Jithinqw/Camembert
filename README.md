@@ -2,31 +2,38 @@
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Jithinqw/Camembert.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Jithinqw/Camembert/alerts/)
 
-This library is for configuring and setting middlewares and hooks for Falcon framework.
+This is a library for configuring and setting up middleware and using programming hooks for the Falcon framework.
 
 ## Requirements
 
 Please refer to `requirements.txt` for list of requirements.
 
-## List of middlewares
+## List of middleware functions
 
-- Converting request to JSON middleware 
-- Requests Logging middleware
-- Response headers middleware
-- Content Type middleware
-- HTTPS required
+- Converting request to JSON 
+- Requests Logging
+- Response headers
+- Content Type
+- Require HTTPS
 
-## Installing
+## Installing Camembert
 
-Run dependencies using `python3 -m pip install -r requirements.txt --cert <proxy-cert>` in your terminal.
+### Local installation
+
+Clone this repository to your workspace and change directory to it.
+
+Run dependencies using `python3 -m pip install -r requirements.txt`
+
+If you are need to use a proxy certificate run `python3 -m pip install -r requirements.txt --cert <proxy-cert>`
 
 Then run `python3 setup.py install`
 
-Or you can install package using `pip install camembert`
+### Installation as a PIP module
 
-Go to [Pypi page](https://pypi.org/project/camembert/) for more details.
+`pip install camembert`
+
+Pypi page - [Camembert](https://pypi.org/project/camembert/)
 
 ## Examples
 
-Please see `EXAMPLES.md` for examples.
-
+Please see `Examples.md` for examples.
