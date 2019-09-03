@@ -1,5 +1,5 @@
 """Module for maintaing logs for server."""
-import os,
+import os
 import logging
 import uuid
 from datetime import datetime
