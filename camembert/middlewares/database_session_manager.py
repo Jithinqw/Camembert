@@ -2,20 +2,20 @@ import falcon
 
 class DBSesssionManager(object):
     """
-    Middleware for manager for managing db sessions 
-    for each request. 
-    Each request requires a session object from SQLAlchemy 
-    session creator method
-        >>> from sqlalchemy.orm import sessionmaker
-        >>> from sqlalchemy import create_engine
-        >>> session = Sessionmaker()
-        >>> engine = create_engine('mysql://user@password')
-        >>> Session.configure(bind=engine)
-        >>> session = Session()
-    Which is passed to this middleware.
+        Middleware for manager for managing db sessions 
+        for each request. 
+        Each request requires a session object from SQLAlchemy 
+        session creator method
+            >>> from sqlalchemy.orm import sessionmaker
+            >>> from sqlalchemy import create_engine
+            >>> session = Sessionmaker()
+            >>> engine = create_engine('mysql://user@password')
+            >>> Session.configure(bind=engine)
+            >>> session = Session()
+        Which is passed to this middleware.
 
-    Todo:
-        Make the session manager more sexy.
+        Todo:
+            Make the session manager more sexy.
     """
 
     def __init__(self, db_session):
