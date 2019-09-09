@@ -1,10 +1,14 @@
 """Module for maintaing logs for server."""
-import os,
+import os
 import logging
 import uuid
 from datetime import datetime
 
+
 def setup_logging(log):
+    """
+        setup_logging - A server logging setting up resource.
+    """
     file_path = os.getcwd()
     project_path = file_path
     log_location = project_path + "/logs/"
@@ -29,18 +33,29 @@ class ServerLoggingManager:
         This module is responsible for maintaing
         logs in a .log file. These are the currently
         implemented details for each log entry.
-        1. IP
-        2. Method
-        3. Resource
-        4. Host
-        5. Forwared host
-        6. URL
-        7. Date
-        8. UUID for each request
-        9. Server Response code
+        1. UUID for each request.
+        2. datetime 
+        3. Method
+        4. URI
+        5. Status
     """
 
     def process_response(self, req, resp, resource, req_succeeded):
+        """
+            process_response - Process response from Falcon server.
+
+        Args:
+            req (object): Request object
+            resp (object): Response object
+            resource (object): Resources targetted.
+            req_succeeded (bool): True if succeded
+        
+        Returns:
+            None
+        
+        Raises:
+            None
+        """
         construct_logger_info = "{0} {1} {2} {3} {4}".format(
             uuid.uuid4(), datetime.now(), req.method, req.uri, resp.status
         )

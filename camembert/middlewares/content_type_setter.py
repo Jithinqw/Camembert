@@ -8,10 +8,12 @@ class ContentTypeManager(object):
         """process_request is a middleware for
         checking the application/json request.
         Args:
-            self (object): class instance
             req (object): request object 
-            res (object): response object
+            resp (object): response object
         
+        Status:
+            Stable
+            
         Raises:
             HTTPBadRequest: 
                 request object does not have a application/json 
