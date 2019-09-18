@@ -16,13 +16,16 @@ class RateLimiterManager(object):
     def __init__(self, max_calls, time_period=1.0):
         """
             Initialization method for RateLimiterManager.
-            
+
             Args:
                 max_calls (int): Maximum number of calls for the server.
                 time_period (float): Time limit for the API. This time is set to 1.0.
 
-            Returns: 
+            Returns:
                 None
+
+            Status:
+                Expiremental
 
             Raises:
                 falcon.HTTPPreconditionFailed
@@ -49,12 +52,17 @@ class RateLimiterManager(object):
             Args:
                 req (object): Request object
                 resp (object): Response object
-            
+
             Returns:
                 None
 
+            Status:
+                Expiremental
+
             Raises:
-                falcon.HTTPLocked
+                falcon.HTTPLocked: Falcon HTTP error informing user of resource is been locked.
+                falcon.HTTPPreconditionFailed: Falcon HTTP error is raised when the user is
+                    passing values less than the threshold time or response limit.
         """
         self.calls.append(time.time())
         if len(self.calls) > self.max_calls:
@@ -63,7 +71,7 @@ class RateLimiterManager(object):
                 description="The resource you requested is currently locked.",
             )
         else:
-            pass
+            return
 
     def process_response(self, req, resp, resource, req_succeeded):
         """
@@ -74,13 +82,13 @@ class RateLimiterManager(object):
                 resp (object): Response object
                 Resource (object): Resource object
                 req_succeeded (bool): is request succeeded or not.
-            
+
             Status:
                 Expiremental
-            
+
             Returns:
                 None
-            
+
             Raises:
                 None
         """

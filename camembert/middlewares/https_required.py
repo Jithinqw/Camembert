@@ -46,7 +46,6 @@ class RequireHTTPSManager(object):
         raise falcon.HTTPBadRequest(
             title="HTTPS Required",
             description=(
-                "All requests must be performed via the HTTPS protocol. "
-                "Please switch to HTTPS and try again."
+                "All requests must be performed via the HTTPS protocol. Please switch to HTTPS and try again."
             ),
         )

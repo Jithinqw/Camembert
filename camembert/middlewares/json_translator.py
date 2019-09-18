@@ -15,17 +15,19 @@ class JSONTranslatorManager(object):
 
             Returns:
                 object: sets data as a req param
-            
+
             Status:
                 Stable
+                
             Raises:
                 falconHTTPBadRequest
         """
         if req.method == "GET":
-            pass
+            return
         else:
             try:
                 req.data = json.loads(req.stream.read().decode("utf-8"))
+                return
             except:
                 raise falcon.HTTPBadRequest(
                     title="Bad request",

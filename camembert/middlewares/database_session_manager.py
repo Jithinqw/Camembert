@@ -50,6 +50,7 @@ class DBSesssionManager(object):
         """
         try:
             resource.db_session = self.db_session()
+            return
         except:
             raise ConnectionError("Unable to create sessions with database")
 
@@ -74,5 +75,6 @@ class DBSesssionManager(object):
                 if not req_succeeded:
                     resource.db_session.rollback()
                 resource.db_session.remove()
+                return
         except:
             raise EnvironmentError("Unable to remove sessions from request")

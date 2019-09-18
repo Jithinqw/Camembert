@@ -12,7 +12,7 @@ class SuccessResponseManager(object):
 
             Args:
                 response_headers(object): Response headers for setting response header.
-            
+
             Returns:
                 None
 
@@ -28,10 +28,10 @@ class SuccessResponseManager(object):
 
     def process_response(self, req, resp, resource, req_succeeded):
         """
-        process_response - It can process successful responses and 
+        process_response - It can process successful responses and
         set headers to every header.
         This middlware does not deletes headers which are vernerable.
-        Please use use another middleware in deleting unwanted response headers. 
+        Please use use another middleware in deleting unwanted response headers.
         Please refer https://www.owasp.org for more details.
 
         Args:
@@ -45,9 +45,10 @@ class SuccessResponseManager(object):
 
         Status:
             Stable
-            
+
         Returns:
             None
         """
         for key, value in self.headers.items():
             resp.set_header(key, value)
+        return

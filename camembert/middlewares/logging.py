@@ -8,10 +8,18 @@ from datetime import datetime
 def setup_logging(log):
     """
         setup_logging - A server logging setting up resource.
+
+        Args:
+            log(object): A log object from process_request
+
+        Returns:
+            None
+
+        Raises:
+            None
     """
     file_path = os.getcwd()
-    project_path = file_path
-    log_location = project_path + "/logs/"
+    log_location = file_path + "/logs/"
     if not os.path.exists(log_location):
         os.makedirs(log_location)
     current_time = datetime.now()
@@ -34,7 +42,7 @@ class ServerLoggingManager:
         logs in a .log file. These are the currently
         implemented details for each log entry.
         1. UUID for each request.
-        2. datetime 
+        2. datetime
         3. Method
         4. URI
         5. Status
@@ -49,10 +57,10 @@ class ServerLoggingManager:
             resp (object): Response object
             resource (object): Resources targetted.
             req_succeeded (bool): True if succeded
-        
+
         Returns:
             None
-        
+
         Raises:
             None
         """
@@ -60,3 +68,4 @@ class ServerLoggingManager:
             uuid.uuid4(), datetime.now(), req.method, req.uri, resp.status
         )
         setup_logging(construct_logger_info)
+        return
