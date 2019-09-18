@@ -30,7 +30,7 @@ class SuccessResponseManager(object):
         """
         process_response - It can process successful responses and
         set headers to every header.
-        This middlware does not deletes headers which are vernerable.
+        This middlware does not deletes headers which are vulnerable.
         Please use use another middleware in deleting unwanted response headers.
         Please refer https://www.owasp.org for more details.
 
