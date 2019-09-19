@@ -1,5 +1,6 @@
 import falcon
 
+
 class BlacklistedIpManager(object):
     """
         Middleware for managing blacklisted ip addresss
@@ -16,17 +17,18 @@ class BlacklistedIpManager(object):
 
         A list of ip address string must be passed to the middleware.
     """
+
     def __init__(self, black_ip_address):
         if black_ip_address is None:
             raise falcon.HTTPPreconditionFailed(
                 title="Server precondition failed",
-                description="list of black listed IPs cannot be empty."
+                description="list of black listed IPs cannot be empty.",
             )
-        if (isinstance(black_ip_address, list) is not True):
+        if isinstance(black_ip_address, list) is not True:
             raise
         else:
             self.black_ip = black_ip_address
-    
+
     def process_request(self, req, resp):
         """
             process_request 
@@ -44,7 +46,7 @@ class BlacklistedIpManager(object):
         if req.remote_addr in self.black_ip:
             raise falcon.HTTPUnauthorized(
                 title="Unauthorized",
-                description="You are unauthorized to view this route."
+                description="You are unauthorized to view this route.",
             )
         else:
             return

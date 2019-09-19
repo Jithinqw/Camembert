@@ -1,5 +1,6 @@
 """
     Middleware for limiting user access to the server globally.
+    Inspired from https://pypi.org/project/ratelimiter/
 """
 import collections
 import time
@@ -98,3 +99,4 @@ class RateLimiterManager(object):
                 break
             else:
                 self.calls.popleft()
+        return

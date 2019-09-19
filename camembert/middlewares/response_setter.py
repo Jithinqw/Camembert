@@ -1,6 +1,7 @@
 import datetime
 import falcon
 
+
 class SuccessResponseManager(object):
     """
        A manager middleware for changing the security headers in success response.
@@ -22,8 +23,7 @@ class SuccessResponseManager(object):
         self.headers = response_headers
         if self.headers is None:
             falcon.HTTPBadRequest(
-                title="Bad Request",
-                description="Response header not set."
+                title="Bad Request", description="Response header not set."
             )
 
     def process_response(self, req, resp, resource, req_succeeded):

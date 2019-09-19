@@ -1,5 +1,6 @@
 import falcon
 
+
 class DBSesssionManager(object):
     """
         Middleware for manager for managing db sessions 
@@ -31,8 +32,7 @@ class DBSesssionManager(object):
         self.db_session = db_session
         if db_session is None:
             raise falcon.HTTPBadRequest(
-                title="Bad Request",
-                description="Database gone away."
+                title="Bad Request", description="Database gone away."
             )
 
     def process_request(self, req, resp, resource, params):

@@ -31,4 +31,4 @@ class InternalServerErrorManager(object):
                 description="Something went wrong on our side. Please try again later.",
             )
         else:
-            return 
+            return

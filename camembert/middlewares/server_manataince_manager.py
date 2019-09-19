@@ -1,5 +1,6 @@
 import falcon
 
+
 class ServerMaintainceManager(object):
 
     """
@@ -13,6 +14,7 @@ class ServerMaintainceManager(object):
         2. DB 
         3. or hard code it. :(
     """
+
     def __init__(self, server_state):
 
         """
@@ -29,17 +31,16 @@ class ServerMaintainceManager(object):
         """
         if server_state is None:
             raise falcon.HTTPInvalidParam(
-                title="Invalid Param",
-                description="Server State should be passed."
+                title="Invalid Param", description="Server State should be passed."
             )
         if type(server_state) is not bool:
             raise falcon.HTTPInvalidParam(
                 title="Invalid Param",
-                description="Invalid datatype. Server Maintaince manager accepts bool."
+                description="Invalid datatype. Server Maintaince manager accepts bool.",
             )
         else:
             self.server_state = server_state
-    
+
     def process_request(self, req, resp):
         """
             process_request, processing the incoming request.
@@ -57,7 +58,7 @@ class ServerMaintainceManager(object):
         if self.server_state is True:
             raise falcon.HTTPServiceUnavailable(
                 title="Service unavailable.",
-                description="Service is currently unavailable. Please try again later."
+                description="Service is currently unavailable. Please try again later.",
             )
         else:
             return
