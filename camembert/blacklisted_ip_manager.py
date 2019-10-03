@@ -7,7 +7,7 @@ class BlacklistedIpManager(object):
         for a server.
 
         Usage:
-        
+
         >>> from camembert.middlewares import BlacklistedIpManager
         >>> app = falcon.api(
             middlewares=[
@@ -25,21 +25,24 @@ class BlacklistedIpManager(object):
                 description="list of black listed IPs cannot be empty.",
             )
         if isinstance(black_ip_address, list) is not True:
-            raise
+            raise falcon.HTTPBadRequest(
+                title="Bad Request",
+                description="Black listed IP must be passed as a list."
+            )
         else:
             self.black_ip = black_ip_address
 
     def process_request(self, req, resp):
         """
-            process_request 
+            process_request
 
             Args:
                 req (object)
                 resp (object)
-            
+
             Returns:
                 None
-            
+
             Raises:
                 falcon.HTTPUnauthorized
         """

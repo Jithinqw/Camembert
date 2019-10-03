@@ -20,10 +20,11 @@ class SuccessResponseManager(object):
             Raises:
                 falcon.HTTPBadRequest
         """
-        self.headers = response_headers
-        if self.headers is None:
+        if isinstance(response_headers, dict):
+            self.headers = response_headers
+        else:
             falcon.HTTPBadRequest(
-                title="Bad Request", description="Response header not set."
+                title="Bad Request", description="Response headers should be a dictonary."
             )
 
     def process_response(self, req, resp, resource, req_succeeded):
