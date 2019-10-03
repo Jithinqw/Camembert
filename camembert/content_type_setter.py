@@ -8,13 +8,15 @@ class ContentTypeManager(object):
         """process_request is a middleware for
         checking the application/json request.
         Args:
-            self (object): class instance
-            req (object): request object 
-            res (object): response object
-        
+            req (object): request object
+            resp (object): response object
+
+        Status:
+            Stable
+
         Raises:
-            HTTPBadRequest: 
-                request object does not have a application/json 
+            HTTPBadRequest:
+                request object does not have a application/json
                 in req.content_type
         """
         if req.content_type is None or "application/json" not in req.content_type:
@@ -22,3 +24,5 @@ class ContentTypeManager(object):
                 title="Invalid Request",
                 description="All requests must have a application/json header",
             )
+        else:
+            return

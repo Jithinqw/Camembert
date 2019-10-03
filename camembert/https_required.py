@@ -4,7 +4,7 @@ import falcon
 _FORWARDED_PROTO_RE = re.compile("proto=([A-Za-z]+)")
 
 
-class RequireHTTPS(object):
+class RequireHTTPSManager(object):
     """Middleware to verify that each request is performed via HTTPS.
 
     While the web server is primarily responsibile for enforcing the
@@ -46,7 +46,6 @@ class RequireHTTPS(object):
         raise falcon.HTTPBadRequest(
             title="HTTPS Required",
             description=(
-                "All requests must be performed via the HTTPS protocol. "
-                "Please switch to HTTPS and try again."
+                "All requests must be performed via the HTTPS protocol. Please switch to HTTPS and try again."
             ),
         )

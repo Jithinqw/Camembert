@@ -10,11 +10,15 @@ Please refer to `requirements.txt` for list of requirements.
 
 ## List of middleware functions
 
-- Converting request to JSON 
+- Converting request to JSON
 - Requests Logging
 - Response headers
 - Content Type
 - Require HTTPS
+- SQLAlchemy session management
+- Internal Server Error
+- RateLimiting
+- Blacklisted IP
 
 ## Installing Camembert
 

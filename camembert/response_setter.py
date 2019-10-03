@@ -1,15 +1,38 @@
 import datetime
+import falcon
 
 
-class SuccessResponseManager:
-    """A manager middleware for changing the security
-       headers in success response.
+class SuccessResponseManager(object):
+    """
+       A manager middleware for changing the security headers in success response.
     """
 
+    def __init__(self, response_headers):
+        """
+            Initialization method for SucessResponseManager
+
+            Args:
+                response_headers(object): Response headers for setting response header.
+
+            Returns:
+                None
+
+            Raises:
+                falcon.HTTPBadRequest
+        """
+        if isinstance(response_headers, dict):
+            self.headers = response_headers
+        else:
+            falcon.HTTPBadRequest(
+                title="Bad Request", description="Response headers should be a dictonary."
+            )
+
     def process_response(self, req, resp, resource, req_succeeded):
-        """process_response - It can process successful responses and 
-        set headers to every header and deletes any headers 
-        which are vulnerable. 
+        """
+        process_response - It can process successful responses and
+        set headers to every header.
+        This middlware does not deletes headers which are vulnerable.
+        Please use use another middleware in deleting unwanted response headers.
         Please refer https://www.owasp.org for more details.
 
         Args:
@@ -21,15 +44,12 @@ class SuccessResponseManager:
         Raises:
             None
 
+        Status:
+            Stable
+
         Returns:
             None
         """
-        resp.set_header("X-Powered-By", "JBoss/7.1.2")
-        resp.set_header("X-Download-Options", "noopen")
-        resp.set_header("X-Content-Type-Options", "nosniff")
-        resp.set_header("X-XSS-Protection", "1; mode=block")
-        resp.set_header("Referrer-Policy", "same-origin")
-        resp.set_header("X-Frame-Options", "same-origin")
-        resp.set_header(
-            "Expires", (datetime.datetime.now() + datetime.timedelta(days=60))
-        )
+        for key, value in self.headers.items():
+            resp.set_header(key, value)
+        return
