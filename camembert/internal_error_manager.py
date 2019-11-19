@@ -25,7 +25,7 @@ class InternalServerErrorManager(object):
             Raises:
                 falcon.HTTPInternalServerError: Raises Falcon internal server error.
         """
-        if resp.status == "500 Internal Server Error":
+        if resp.status == falcon.HTTP_500:
             raise falcon.HTTPInternalServerError(
                 title="Internal Server Error",
                 description="Something went wrong on our side. Please try again later.",

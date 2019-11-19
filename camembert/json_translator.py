@@ -26,8 +26,13 @@ class JSONTranslatorManager(object):
             return
         else:
             try:
-                req.data = json.loads(req.stream.read().decode("utf-8"))
-                return
+                if req.content_length:
+                    req.data = json.loads(req.bounded_stream.read().decode("utf-8"))
+                    return
+                else:
+                    raise falcon.HTTPBadRequest(
+                    "Bad request", "Cannot accept content lenght null."
+                )
             except:
                 raise falcon.HTTPBadRequest(
                     title="Bad request",
