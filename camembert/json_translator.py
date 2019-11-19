@@ -31,10 +31,11 @@ class JSONTranslatorManager(object):
                     return
                 else:
                     raise falcon.HTTPBadRequest(
-                    "Bad request", "Cannot accept content lenght null."
-                )
-            except:
+                        "Bad request", "Cannot accept content lenght null."
+                    )
+            except Exception:
                 raise falcon.HTTPBadRequest(
                     title="Bad request",
-                    description="Invalid body. Unable to parse the given content",
+                    description="Invalid body. \
+                        Unable to parse the given content",
                 )

@@ -27,7 +27,7 @@ class BlacklistedIpManager(object):
         if isinstance(black_ip_address, list) is not True:
             raise falcon.HTTPBadRequest(
                 title="Bad Request",
-                description="Black listed IP must be passed as a list."
+                description="Black listed IP must be passed as a list.",
             )
         else:
             self.black_ip = black_ip_address

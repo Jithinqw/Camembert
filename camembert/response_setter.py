@@ -1,6 +1,4 @@
-import datetime
 import falcon
-
 
 class SuccessResponseManager(object):
     """
@@ -24,7 +22,8 @@ class SuccessResponseManager(object):
             self.headers = response_headers
         else:
             falcon.HTTPBadRequest(
-                title="Bad Request", description="Response headers should be a dictonary."
+                title="Bad Request",
+                description="Response headers should be a dictonary.",
             )
 
     def process_response(self, req, resp, resource, req_succeeded):
