@@ -12,5 +12,4 @@ class ContentHeaderSetterTest(testing.TestCase):
     
     def test_set_header(self):
         result = self.simulate_get('/test')
-        print(result._headers)
         

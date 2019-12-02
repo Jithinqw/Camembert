@@ -20,6 +20,5 @@ class InternalServerErrorTest(testing.TestCase):
     
     def test_route_response(self):
         result = self.simulate_get('/test')
-        print(result.json)
         self.assertEqual(result.json['title'], 'Internal Server Error')
         self.assertEqual(result.json['description'], 'Something went wrong on our side. Please try again later.')
