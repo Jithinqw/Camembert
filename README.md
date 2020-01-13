@@ -4,7 +4,7 @@
 <p>
 <a href="https://github.com/psf/black/blob/master/LICENSE"><img alt="License: MIT" src="https://black.readthedocs.io/en/stable/_static/license.svg"></a>
 </p>
-This is a library for configuring and setting up middleware and using programming hooks for the Falcon framework.
+Configure middlewares and hooks for the Falcon framework easily.
 
 ## Requirements
 
@@ -30,7 +30,7 @@ Clone this repository to your workspace and change directory to it.
 
 Run dependencies using `python3 -m pip install -r requirements.txt`
 
-If you are need to use a proxy certificate run `python3 -m pip install -r requirements.txt --cert <proxy-cert>`
+If you are in need to use a proxy certificate run `python3 -m pip install -r requirements.txt --cert <proxy-cert>`
 
 Then run `python3 setup.py install`
 
