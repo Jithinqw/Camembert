@@ -1,6 +1,7 @@
 # Camembert
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Jithinqw/Camembert.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Jithinqw/Camembert/alerts/)
+[![Python 3](https://img.shields.io/badge/python-3-blue.svg)](https://www.python.org/downloads/)
 
 This is a library for configuring and setting up middleware and using programming hooks for the Falcon framework.
 
