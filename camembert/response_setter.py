@@ -21,7 +21,7 @@ class SuccessResponseManager(object):
         if isinstance(response_headers, dict):
             self.headers = response_headers
         else:
-            falcon.HTTPBadRequest(
+            raise falcon.HTTPBadRequest(
                 title="Bad Request",
                 description="Response headers should be a dictonary.",
             )
